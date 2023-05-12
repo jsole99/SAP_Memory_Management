@@ -7,6 +7,7 @@ SAP Learning material to understand Memory Management
 
 # Table of Contents
 [Introduction to Memory Management](#Introduction)
+[SAP Sahred Memory](#Shared-Memory)
 
 # Introduction
 
@@ -28,3 +29,26 @@ These are the following memory areas SAP has:
 We can see the management and separation of SAP's memory in the image below
 
 ![Memory Separation](./img/memory_separation.png)
+
+# Shared Memory
+
+SAP Shared memory is a shared memory resource in SAP Memory Management where various buffer data is stored.
+
+SAP Shared memory provides a shared memory pool which gets shared by all work processes and is based directly on the shared memory of the OS.
+
+**Local** SAP SHM segments can be used by all work processes of one AS instance.
+
+**Global** SAP SHM segments can be used by all work process of all AS instances running on the same host.
+
+SAP SHM segments are separated in one of two ways:
+* Allocated to a shared memory segment in the OS
+* Managed in shared memory pools (SHM Pools)
+
+What exactly is a shared memory pool?
+* It is a shared memory segment in the OS that contains multiple SAP SHM segments
+* Pool management of SAP SHM can be useful if the number of SAP SHM segments is limited by the OS
+* The size of the shared memory pools is defined in the following parameter: ipc/shm_psize_<xx>
+
+For a work process to be able to allocate SAP shared memory, an SAP SHM segment has to be **CREATED**. An area is reserved for this in physcial memory. Next, an SAP SHM segment can be assigned to a work process, in this step, the address is returend to the work process which it can use to access the SAP SHM segment.
+
+# Extended Memory
