@@ -6,6 +6,10 @@ Date: 05/12/23
 
 Description: Kochasoft Memory Types & Memory Management Learning Package
 
+All information on this page can be found publicly available from help.sap.com:
+
+https://help.sap.com/docs/ABAP_PLATFORM/f146e75588924fa4987b6c8f1a7a8c7e/8f5a174c6b294077bfefea66c4b7acc3.html
+
 # Table of Contents
 [Introduction to Memory Management](#Introduction)
 
