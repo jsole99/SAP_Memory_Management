@@ -65,9 +65,7 @@ SAP Extended Segments Memory (ES) forms the basis for extended memory and global
 The ES consists of a set number of segments located next to each other which can be accessed by all work processes of an AS instance
 
 An ES segment consists of one or more ES blocks that are all the same size
-* The size of these blocks is configured in the profile parameter 
-
-```em/blocksize_KB```
+* The size of these blocks is configured in the profile parameter ```em/blocksize_KB```
 
     * It's default value is 4 MB
 
