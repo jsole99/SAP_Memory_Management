@@ -7,7 +7,9 @@ SAP Learning material to understand Memory Management
 
 # Table of Contents
 [Introduction to Memory Management](#Introduction)
-[SAP Sahred Memory](#Shared-Memory)
+[SAP Shared Memory](#Shared-Memory)
+[Extended Segments Memory](#extended-segments-memory)
+[Extended Memory](#Extended-Memory)
 
 # Introduction
 
@@ -51,4 +53,14 @@ What exactly is a shared memory pool?
 
 For a work process to be able to allocate SAP shared memory, an SAP SHM segment has to be **CREATED**. An area is reserved for this in physcial memory. Next, an SAP SHM segment can be assigned to a work process, in this step, the address is returend to the work process which it can use to access the SAP SHM segment.
 
-# Extended Memory
+# Extended Segments Memory
+
+SAP Extended Segments Memory (ES) forms the basis for extended memory and global extended memory (EM and EG)
+
+The ES consists of a set number of segments located next to each other which can be accessed by all work processes of an AS instance
+
+An ES segment consists of one or more ES blocks that are all the same size
+* The size of these blocks is configured in the profile parameter ***em/blocksize_KB***
+    * It's default value is 4 MB
+
+The ES blocks are stored in specific shared memory segments in the OS where the segments are exclusively reserved for ES memory. ES and EM memory are implemented depending on the OS
