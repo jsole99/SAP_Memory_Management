@@ -7,8 +7,11 @@ SAP Learning material to understand Memory Management
 
 # Table of Contents
 [Introduction to Memory Management](#Introduction)
+
 [SAP Shared Memory](#Shared-Memory)
+
 [Extended Segments Memory](#extended-segments-memory)
+
 [Extended Memory](#Extended-Memory)
 
 # Introduction
