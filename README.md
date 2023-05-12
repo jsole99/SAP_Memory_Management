@@ -141,3 +141,6 @@ Exmaple: When a user becomes inactive.
 A Dialog Work Process allocates PRIV memory if the quota for extended memory (EM) is exceeded for a user session, or in exceptional cases if the extended memory (EM) is fully used up.
 
 The Non-Dialog work processes (backgorund, update, spool) allocate PRIV memory at the start of the request processing. This is because no faster user context is required for these work process types.
+
+## Terminating Work Processes in PRIV Mode
+
