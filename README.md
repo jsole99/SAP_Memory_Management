@@ -16,6 +16,8 @@ SAP Learning material to understand Memory Management
 
 [Global Extended Memory](#Global-Extended-Memory)
 
+[PRIV Memory (HEAP)](#priv-memory)
+
 # Introduction
 
 SAP Memory Management has several types of memory which can be allocated differently. This allocation is determined by the systems OS type, work process type, as well as the systems configuration.
@@ -114,3 +116,24 @@ Global Extended Memory is part of the Extended Memory and is used specifically f
 EG is sized using the profile parameter:
 
 ```em/global_area_MB```
+
+# PRIV Memory
+
+Also known as heap memory - PRIV memory contains data from the user context and is bound to a work process within a user session that is being executed.
+When a work process allocates PRIV memory, it cannot process any other user context.
+
+When memory areas are allocated from the PRIV memory pool, the work process is reserved for processing the current user context until the context releases the work process after the user ends their session.
+
+* At this time, no other user context can be mapped to the work process
+
+PRIV memory size can be specified using the profile parameter
+
+```abap/heap_area_total```
+
+Once PRIV memory has been allocated, the work process runs in PRIV mode.
+
+PRIV mode prevents the user context from being unmapped from the work process
+
+Exmaple: When a user becomes inactive.
+
+* This use of the PRIV memory leads to an exclusive occupancy of the dialog work process by the user and prevents (up until the end of the transaction currently running) the work process from processing another user context. Neither can the user context currently in the occupuied work process be processed by another work process.
