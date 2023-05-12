@@ -19,6 +19,8 @@ Description: Kochasoft Memory Types & Memory Management Learning Package
 
 [PRIV Memory (HEAP)](#priv-memory)
 
+[PROC Memory](#PROC-Memory)
+
 # Introduction
 
 SAP Memory Management has several types of memory which can be allocated differently. This allocation is determined by the systems OS type, work process type, as well as the systems configuration.
@@ -152,3 +154,21 @@ You can set profile parameters to limit both the time and the number of work pro
 Limiting the time will allow any processes in PRIV mode to be stopped if they exceed that time limit
 
 ```rdisp/max_priv_time``` - can be set by either minutes (m), hours (h) or days (d)
+
+You can also set a number of processes that can be run in PRIV mode
+
+```rdisp/wppriv_max_no``` will allow you to set that specific number.
+
+* If that number is exceeded, then the olders process in PRIV memory will be terminated.
+
+# PROC Memory
+
+PROC memory does not contain any user-specific data, but is specific to the local process
+
+PROC memory is used for data that each work process requires, regardless of the user session (i.e. temp, heap buffer areas)
+
+PROC memory does not lead to an exclusive reservation of the process for a specific user context.
+
+Can set PROC memory with the profile parameter:
+
+```em/proc_max_size_MB``` - you will define the max amount of PROC memory all work processes are allowed to occupy.
