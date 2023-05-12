@@ -90,8 +90,15 @@ The squence in which work processes allocate memory areas from the EM depends on
 
 And the underlying operating system
 
-**<u>Dialog**
+**Dialog**
 
-work processes first allocate **EM** to ensure a fast user context switch. Once the quota for EM has been reached (ztta/roll_extension_dia), the work process allocates PRIV memory (HEAP). The work process is allocated to a specific user session and is not available to other user contexts.
+Work processes first allocate **EM** to ensure a fast user context switch. Once the quota for EM has been reached (ztta/roll_extension_dia), the work process allocates PRIV memory (HEAP). The work process is allocated to a specific user session and is not available to other user contexts.
 
 **Non-Dialog**
+
+Work processes first allocate PRIV (heap) memory. Once the quota for PRIV memory is reached, the work processes allocate EM, since no fast user context is required with this work processes type.
+
+**Implementation Models**
+* Flat implementation
+* Map implementation
+* ESSHM implementation
