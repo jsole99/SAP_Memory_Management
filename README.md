@@ -137,3 +137,7 @@ PRIV mode prevents the user context from being unmapped from the work process
 Exmaple: When a user becomes inactive.
 
 * This use of the PRIV memory leads to an exclusive occupancy of the dialog work process by the user and prevents (up until the end of the transaction currently running) the work process from processing another user context. Neither can the user context currently in the occupuied work process be processed by another work process.
+
+A Dialog Work Process allocates PRIV memory if the quota for extended memory (EM) is exceeded for a user session, or in exceptional cases if the extended memory (EM) is fully used up.
+
+The Non-Dialog work processes (backgorund, update, spool) allocate PRIV memory at the start of the request processing. This is because no faster user context is required for these work process types.
