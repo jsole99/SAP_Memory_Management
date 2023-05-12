@@ -24,3 +24,7 @@ These are the following memory areas SAP has:
 | Global Extended Memory (EG) | All work processes | ABAP instance | Yes | No |
 | PRIV Memory (HEAP) | Process-specific | ABAP transactions | Yes | Yes |
 | PROC Memory | Process-specific | ABAP instance | Yes | No |
+
+We can see the management and separation of SAP's memory in the image below
+
+![Memory Separation](./img/memory_separation.png)
