@@ -108,3 +108,9 @@ Work processes first allocate PRIV (heap) memory. Once the quota for PRIV memory
 # Global Extended Memory
 
 The global extended memory (EG) is part of the extended memory (EM). Containing user-specific data and is able to be accessed by all work processes.
+
+Global Extended Memory is part of the Extended Memory and is used specifically for multiprocessing. It contains data that does not belong to a specific user session. This may be data used for monitoring and statistics, or table buffers of the databse interface (DBI), or ABAP shared objects that all work processes have access to independently of the user session.
+
+EG is sized using the profile parameter:
+
+```em/global_area_MB```
