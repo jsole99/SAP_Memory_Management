@@ -77,8 +77,8 @@ Extended memory will contain user specific rdata that all work process will have
 
 EM is the core of SAP Memory Management which contains majority of the data for a user session
 
-The size of the EM area is set in the profile 
+The size of the EM area is set in the profile parameter:
 
-`parameter em/initial_size_MB`
+`em/initial_size_MB`
 
 SAP Memory Management has the task of allocating memory areas from different memory types to a user session to enable work processes to execute ABAP programs
