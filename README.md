@@ -67,3 +67,15 @@ An ES segment consists of one or more ES blocks that are all the same size
     * It's default value is 4 MB
 
 The ES blocks are stored in specific shared memory segments in the OS where the segments are exclusively reserved for ES memory. ES and EM memory are implemented depending on the OS
+
+# Extended Memory
+
+Extended memory will contain user specific rdata that all work process will have access to. This will help optimize our system for when user context switches are performed.
+
+EM is the core of SAP Memory Management which contains majority of the data for a user session
+
+The size of the EM area is set in the profile 
+
+`parameter em/initial_size_MB`
+
+SAP Memory Management has the task of allocating memory areas from different memory types to a user session to enable work processes to execute ABAP programs
