@@ -52,7 +52,9 @@ SAP SHM segments are separated in one of two ways:
 What exactly is a shared memory pool?
 * It is a shared memory segment in the OS that contains multiple SAP SHM segments
 * Pool management of SAP SHM can be useful if the number of SAP SHM segments is limited by the OS
-* The size of the shared memory pools is defined in the following parameter: ipc/shm_psize_<xx>
+* The size of the shared memory pools is defined in the following parameter: 
+
+```ipc/shm_psize_<xx>```
 
 For a work process to be able to allocate SAP shared memory, an SAP SHM segment has to be **CREATED**. An area is reserved for this in physcial memory. Next, an SAP SHM segment can be assigned to a work process, in this step, the address is returend to the work process which it can use to access the SAP SHM segment.
 
