@@ -145,3 +145,10 @@ The Non-Dialog work processes (backgorund, update, spool) allocate PRIV memory a
 
 ## Terminating Work Processes in PRIV Mode
 
+SAP Memory Management offers a mechanism that lets non-active work processes in the PRIV mode terminate. You can use this mechanism to prevent blocking work porcesses, thereby avoiding performance problems in your ABAP system.
+
+You can set profile parameters to limit both the time and the number of work processes in PRIV mode.
+
+Limiting the time will allow any processes in PRIV mode to be stopped if they exceed that time limit
+
+```rdisp/max_priv_time``` - can be set by either minutes (m), hours (h) or days (d)
