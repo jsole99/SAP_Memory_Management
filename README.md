@@ -82,3 +82,10 @@ The size of the EM area is set in the profile parameter:
 `em/initial_size_MB`
 
 SAP Memory Management has the task of allocating memory areas from different memory types to a user session to enable work processes to execute ABAP programs
+
+The squence in which work processes allocate memory areas from the EM depends on both the work process type:
+
+* Dialog
+* Non-Dialog
+
+And the underlying operating system
