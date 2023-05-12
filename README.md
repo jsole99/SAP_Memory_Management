@@ -9,15 +9,15 @@ Description: Kochasoft Memory Types & Memory Management Learning Package
 # Table of Contents
 [Introduction to Memory Management](#Introduction)
 
-[SAP Shared Memory](#Shared-Memory)
+[(SHM) SAP Shared Memory](#Shared-Memory)
 
-[Extended Segments Memory](#extended-segments-memory)
+[(SM) Extended Segments Memory](#extended-segments-memory)
 
-[Extended Memory](#Extended-Memory)
+[(EM) Extended Memory](#Extended-Memory)
 
-[Global Extended Memory](#Global-Extended-Memory)
+[(EG) Global Extended Memory](#Global-Extended-Memory)
 
-[PRIV Memory (HEAP)](#priv-memory)
+[(HEAP) PRIV Memory](#priv-memory)
 
 [PROC Memory](#PROC-Memory)
 
