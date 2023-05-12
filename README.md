@@ -14,6 +14,8 @@ SAP Learning material to understand Memory Management
 
 [Extended Memory](#Extended-Memory)
 
+[Global Extended Memory](#Global-Extended-Memory)
+
 # Introduction
 
 SAP Memory Management has several types of memory which can be allocated differently. This allocation is determined by the systems OS type, work process type, as well as the systems configuration.
@@ -102,3 +104,7 @@ Work processes first allocate PRIV (heap) memory. Once the quota for PRIV memory
 * Flat implementation
 * Map implementation
 * ESSHM implementation
+
+# Global Extended Memory
+
+The global extended memory (EG) is part of the extended memory (EM). Containing user-specific data and is able to be accessed by all work processes.
