@@ -13,6 +13,8 @@ https://help.sap.com/docs/ABAP_PLATFORM/f146e75588924fa4987b6c8f1a7a8c7e/8f5a174
 # Table of Contents
 [Introduction to Memory Management](#Introduction)
 
+[SAP Roll Area](#Roll-Area)
+
 [(SHM) SAP Shared Memory](#Shared-Memory)
 
 [(SM) Extended Segments Memory](#extended-segments-memory)
@@ -45,6 +47,16 @@ These are the following memory areas SAP has:
 We can see the management and separation of SAP's memory in the image below
 
 ![Memory Separation](./img/memory_separation.png)
+
+# Roll Area
+
+Roll area is a memory area with a configurable set size that belongs to a work process. It is located in the heap of the virutal address space of the work process.
+
+When the context of  a work process changes, the data is copied from the roll area to a common resource known as the roll file. To prevent repeated copying, another __roll buffer__ is located between, which is part of the shared memory.
+
+The roll area consists of two segments:
+The first segment, which can be set with ztta/roll_first is assigned to the work process first as memory. If this is used up, the work process has more memory assigned to it. The amount of memory is determined by the difference between the ztta/roll_area and ztta/roll_first parameters.
+
 
 # Shared Memory
 
