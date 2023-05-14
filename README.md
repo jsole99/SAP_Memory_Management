@@ -57,6 +57,7 @@ When the context of  a work process changes, the data is copied from the roll ar
 The roll area consists of two segments:
 The first segment, which can be set with ztta/roll_first is assigned to the work process first as memory. If this is used up, the work process has more memory assigned to it. The amount of memory is determined by the difference between the ztta/roll_area and ztta/roll_first parameters.
 
+![Roll_area](./img/roll.png)
 
 # Shared Memory
 
