@@ -207,7 +207,7 @@ Objects in the buffer that were used the least recently are removed.
 In this context, the term "__SWAP__" means the objects removed from the buffer are lost and cannot be replaced until a new database access is performed (replacing the lost object)
 
 Two possible reasons for a swap to occur:
-* There is no space left in the buffer data area
+1. There is no space left in the buffer data area
     * In this case, the buffer is too small, and needs to be increased
-* There are no directory entities left
+2. There are no directory entities left
     * Although there is enough space left in the buffer, no further objects can be loaded because the number of directory entities is limited.
