@@ -27,6 +27,10 @@ https://help.sap.com/docs/ABAP_PLATFORM/f146e75588924fa4987b6c8f1a7a8c7e/8f5a174
 
 [PROC Memory](#PROC-Memory)
 
+# Actions
+
+[Swap](#swap)
+
 # Introduction
 
 SAP Memory Management has several types of memory which can be allocated differently. This allocation is determined by the systems OS type, work process type, as well as the systems configuration.
@@ -189,3 +193,21 @@ PROC memory does not lead to an exclusive reservation of the process for a speci
 Can set PROC memory with the profile parameter:
 
 ```em/proc_max_size_MB``` - you will define the max amount of PROC memory all work processes are allowed to occupy.
+
+# Actions
+
+The following section will cover any types of actions or important concepts that go along with memory
+
+# Swap
+
+Swap occurs when the buffer is full, and the SAP system has to load additional objects into the buffer.
+
+Objects in the buffer that were used the least recently are removed.
+
+In this context, the term "__SWAP__" means the objects removed from the buffer are lost and cannot be replaced until a new database access is performed (replacing the lost object)
+
+Two possible reasons for a swap to occur:
+* There is no space left in the buffer data area
+    * In this case, the buffer is too small, and needs to be increased
+* There are no directory entities left
+    * Although there is enough space left in the buffer, no further objects can be loaded because the number of directory entities is limited.
